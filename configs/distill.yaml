@@ -2,8 +2,9 @@ model_name: gemma3:12b
 model_name_hf: google/gemma-3-12b-it
 n_train: 800
 options:
-  temperature: 0.5,
-  top_p: 0.9,
+  temperature: 0.5
+  top_p: 0.9
+  num_ctx: 8192
 reviewer:
   model_name: gpt-oss:20b
   options:
