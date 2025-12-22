@@ -77,3 +77,6 @@ def apply_custom_template(tokenizer, chat_template="student"):
         chat_template = GEMMA3_TEACHER_TEMPLATE
     tokenizer.chat_template = chat_template
     return tokenizer
+
+def render_teacher_prompt(tokenizer, messages):
+    return tokenizer.apply_chat_template(messages, add_generation_prompt=True, tokenize=False)
