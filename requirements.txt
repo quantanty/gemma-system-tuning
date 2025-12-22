@@ -4,3 +4,4 @@ trl
 peft
 torch
 pandas
+ollama
