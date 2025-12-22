@@ -2,6 +2,7 @@ import os
 import argparse
 import yaml
 from pydantic import BaseModel
+from tqdm import tqdm
 import ollama
 from datasets import load_dataset
 from transformers import AutoTokenizer
@@ -63,7 +64,7 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(distill_cfg["model_name_hf"])
     tokenizer = apply_custom_template(tokenizer, "teacher")
 
-    for i, ex in enumerate(data):
+    for i, ex in tqdm(enumerate(data), total=len(data)):
         messages = [
             {"role": "system", "content": ex["system_message"]},
             {"role": "user", "content": ex["user_message"]},
