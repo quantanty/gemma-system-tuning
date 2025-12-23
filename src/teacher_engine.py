@@ -39,7 +39,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--n-retries", type=int, default=2, required=False, help="Number of retries")
     parser.add_argument("--start-idx", type=int, default=0, required=False, help="Start index")
-    parser.add_argument("--end-idx", type=int, default=-1, required=False, help="End index")
+    parser.add_argument("--end-idx", type=int, default=None, required=False, help="End index")
     return parser.parse_args()
 
 
